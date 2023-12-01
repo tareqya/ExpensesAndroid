@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.UpdateFragment">
+
+    <TextView
+        android:id="@+id/fUpdate_TV_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update your expenses list"
+        android:padding="10dp"
+        android:textSize="24sp"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fUpdate_TF_title"
+        android:layout_below="@id/fUpdate_TV_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:hint="Title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fUpdate_TF_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fUpdate_TF_title"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:hint="Price">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/fUpdate_SP_categoriesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fUpdate_TF_price"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        />
+
+
+    <Button
+        android:id="@+id/fUpdate_BTN_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:layout_below="@+id/fUpdate_SP_categoriesList"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:width="200dp"
+        />
+
+</RelativeLayout>

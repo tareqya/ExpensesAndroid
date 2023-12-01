@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.CategoryActivity">
+
+    <LinearLayout
+        android:id="@+id/aCategory_LL_nameWrapper"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/aCategory_IMG_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/icon"
+            />
+
+        <TextView
+            android:id="@+id/aCategory_TV_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Category Name"
+            />
+    </LinearLayout>
+
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/aCategory_PI_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aCategory_LL_nameWrapper"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/aCategory_TV_price"
+        android:layout_below="@+id/aCategory_PI_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="200$"
+        android:textColor="@color/DarkPrimary"
+        android:textSize="24sp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/aCategory_RV_products"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@+id/aCategory_TV_price"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
