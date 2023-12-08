@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "293889367045",
+    "firebase_url": "https://expenses-fd9de-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "expenses-fd9de",
+    "storage_bucket": "expenses-fd9de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:293889367045:android:8d9391b249af106b96d06c",
+        "android_client_info": {
+          "package_name": "com.example.expensesapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs21Br3lc1KT7VCYTE8oVsZugnyIL-nmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

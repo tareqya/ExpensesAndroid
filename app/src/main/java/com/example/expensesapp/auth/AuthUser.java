@@ -4,6 +4,11 @@ public class AuthUser {
     private String email;
     private String password;
 
+    public AuthUser(){}
+    public AuthUser(String email, String password){
+        this.email = email;
+        this.password = password;
+    }
     public String getEmail() {
         return email;
     }
