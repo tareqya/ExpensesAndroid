@@ -62,8 +62,9 @@
         android:width="200dp"
         />
 
-    <TextView
-        android:id="@+id/login_TV_forgetPassword"
+    <Button
+        android:id="@+id/login_BTN_forgetPassword"
+        style="@style/Widget.Material3.Button.TextButton"
         android:layout_below="@+id/login_BTN_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,7 +75,7 @@
         />
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/login_DV"
-        android:layout_below="@+id/login_TV_forgetPassword"
+        android:layout_below="@+id/login_BTN_forgetPassword"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

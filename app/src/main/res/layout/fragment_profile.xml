@@ -11,12 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/profile_ConstraintLayout_profileImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp">
+
 
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -24,6 +19,8 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:src="@drawable/icon"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.536"
@@ -31,28 +28,13 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.049"/>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/profile_FBTN_uploadImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
 
-                app:backgroundTint="@color/DarkPrimary"
-                app:fabSize="mini"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/baseline_add_a_photo_24"
-                app:tint="@color/white"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/profile_TV_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/profile_ConstraintLayout_profileImg"
+            android:layout_below="@+id/profile_image"
             android:layout_centerHorizontal="true"
             android:text=""
             android:textColor="@color/black"

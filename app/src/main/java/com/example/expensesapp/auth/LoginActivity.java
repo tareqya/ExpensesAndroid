@@ -25,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
     private Button login_BTN_Signup;
     private CircularProgressIndicator login_PB_loading;
     private AuthController authController;
+    private Button login_BTN_forgetPassword;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         login_BTN_login = findViewById(R.id.login_BTN_login);
         login_BTN_Signup = findViewById(R.id.login_BTN_Signup);
         login_PB_loading = findViewById(R.id.login_PB_loading);
+        login_BTN_forgetPassword = findViewById(R.id.login_BTN_forgetPassword);
     }
 
     private void initVars() {
@@ -82,6 +85,14 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        login_BTN_forgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = login_TF_email.getEditText().getText().toString();
+                authController.sendResetPasswordLink(email);
             }
         });
     }

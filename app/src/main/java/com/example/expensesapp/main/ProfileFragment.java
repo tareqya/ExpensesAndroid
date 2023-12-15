@@ -1,5 +1,6 @@
 package com.example.expensesapp.main;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,8 +13,9 @@ import com.example.expensesapp.R;
 
 public class ProfileFragment extends Fragment {
 
-    public ProfileFragment() {
-        // Required empty public constructor
+    private Activity activity;
+    public ProfileFragment(Activity activity) {
+       this.activity = activity;
     }
 
     @Override

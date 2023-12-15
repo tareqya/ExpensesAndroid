@@ -50,4 +50,8 @@ public class AuthController {
         mAuth.signOut();
     }
 
+
+    public void sendResetPasswordLink(String email){
+        mAuth.sendPasswordResetEmail(email);
+    }
 }
