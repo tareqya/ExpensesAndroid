@@ -3,10 +3,10 @@
     <style name="Base.Theme.ExpensesApp" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/DarkPrimary</item>
         <item name="colorPrimaryVariant">@color/DarkPrimary</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/DarkPrimary</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/white</item>
-        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorSecondary">@color/DarkPrimary</item>
+        <item name="colorSecondaryVariant">@color/DarkPrimary</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>

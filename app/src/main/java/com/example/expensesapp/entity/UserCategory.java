@@ -9,6 +9,7 @@ public class UserCategory {
     
     public UserCategory() {
         this.maxPrice = 1000;
+        categoryItems = new ArrayList<>();
     }
 
     public double getMaxPrice() {
@@ -37,6 +38,12 @@ public class UserCategory {
         this.categoryItems.remove(categoryItem);
     }
 
-    public void update() {
+    public UserCategory setCategoryItems(ArrayList<CategoryItem> categoryItems) {
+        this.categoryItems = categoryItems;
+        return this;
+    }
+
+    public ArrayList<CategoryItem> getCategoryItems() {
+        return categoryItems;
     }
 }

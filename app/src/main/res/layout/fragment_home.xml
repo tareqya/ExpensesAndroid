@@ -9,7 +9,7 @@
         android:id="@+id/fHome_TV_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello Tia"
+        android:text=""
         android:padding="10dp"
         android:textSize="32sp"
         />
@@ -22,5 +22,14 @@
         android:layout_below="@id/fHome_TV_name"
         />
 
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/fHome_PB_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:indeterminate="true"
+        android:layout_centerInParent="true"
+        />
 
 </RelativeLayout>

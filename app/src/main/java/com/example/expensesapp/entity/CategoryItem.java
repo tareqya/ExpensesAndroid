@@ -1,12 +1,15 @@
 package com.example.expensesapp.entity;
 
-public class CategoryItem extends FirebaseKey {
+import java.util.Date;
+
+public class CategoryItem {
 
     private String title;
     private double price;
+    private Date date;
 
     public CategoryItem() {
-
+        this.date = new Date();
     }
     public String getTitle() {
         return title;
@@ -26,4 +29,12 @@ public class CategoryItem extends FirebaseKey {
         return this;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public CategoryItem setDate(Date d){
+        this.date = d;
+        return this;
+    }
 }

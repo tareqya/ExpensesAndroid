@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.expensesapp.R;
+import com.example.expensesapp.boundary.UserBoundary;
 import com.example.expensesapp.callback.AuthCallBack;
 import com.example.expensesapp.callback.UserCallBack;
 import com.example.expensesapp.controller.AuthController;
@@ -83,6 +84,11 @@ public class SignupActivity extends AppCompatActivity {
                     Toast.makeText(SignupActivity.this, error, Toast.LENGTH_SHORT).show();
                 }
                 signup_PB_loading.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onUserDataFetchComplete(UserBoundary userBoundary) {
+
             }
         });
 
