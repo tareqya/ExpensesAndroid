@@ -15,6 +15,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:layout_margin="10dp"
             android:id="@+id/aCategory_IMG_image"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -28,6 +29,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/black"
+            android:layout_marginStart="20dp"
             android:text="Category Name"
             />
     </LinearLayout>

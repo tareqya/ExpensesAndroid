@@ -38,12 +38,31 @@ public class UserController {
         });
     }
 
+    public void getUserInfo(String uid){
+        db.getReference().child(UserEntity.USERS_TABLE).child(uid).addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                UserEntity user = snapshot.getValue(UserEntity.class);
+                StorageController storageController = new StorageController();
+                if(user.getImagePath() != null){
+                    String imageUrl = storageController.downloadImageUrl(user.getImagePath());
+                    user.setImageUrl(imageUrl);
+                }
+                userCallBack.onUserInfoFetchComplete(user);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
     public void getUserData(String uid, ArrayList<CategoryEntity> categoryEntities){
         db.getReference().child(UserEntity.USERS_TABLE).child(uid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserBoundary userBoundary = snapshot.getValue(UserBoundary.class);
-
                 userBoundary.getUserCategories().removeIf(item -> item == null);
 
                 for(int i = 0 ; i < categoryEntities.size(); i++) {

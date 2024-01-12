@@ -3,7 +3,9 @@ package com.example.expensesapp.boundary;
 import com.example.expensesapp.entity.CategoryEntity;
 import com.example.expensesapp.entity.UserCategory;
 
-public class UserCategoryBoundary extends UserCategory {
+import java.io.Serializable;
+
+public class UserCategoryBoundary extends UserCategory implements Serializable {
     private CategoryEntity categoryEntity;
 
     public UserCategoryBoundary() {}

@@ -64,6 +64,7 @@
         android:layout_below="@+id/fUpdate_SP_categoriesList"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:textColor="#fff"
         android:width="200dp"
         />
 

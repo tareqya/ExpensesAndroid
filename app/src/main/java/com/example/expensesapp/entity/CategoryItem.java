@@ -1,8 +1,9 @@
 package com.example.expensesapp.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class CategoryItem {
+public class CategoryItem implements Serializable {
 
     private String title;
     private double price;

@@ -90,6 +90,11 @@ public class SignupActivity extends AppCompatActivity {
             public void onUserDataFetchComplete(UserBoundary userBoundary) {
 
             }
+
+            @Override
+            public void onUserInfoFetchComplete(UserEntity user) {
+
+            }
         });
 
         signup_BTN_login.setOnClickListener(new View.OnClickListener() {

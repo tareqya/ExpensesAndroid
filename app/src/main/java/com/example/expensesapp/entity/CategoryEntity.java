@@ -2,7 +2,9 @@ package com.example.expensesapp.entity;
 
 import com.google.firebase.database.Exclude;
 
-public class CategoryEntity extends FirebaseKey {
+import java.io.Serializable;
+
+public class CategoryEntity extends FirebaseKey implements Serializable {
     public static final String CATEGORY_TABLE = "Categories";
     private String name;
     private String imagePath;

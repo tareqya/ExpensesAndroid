@@ -1,8 +1,11 @@
 package com.example.expensesapp.entity;
 
+import com.google.firebase.database.Exclude;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class UserCategory {
+public class UserCategory implements Serializable {
     private String categoryKey;
     private double maxPrice;
     private ArrayList<CategoryItem> categoryItems;
@@ -45,5 +48,15 @@ public class UserCategory {
 
     public ArrayList<CategoryItem> getCategoryItems() {
         return categoryItems;
+    }
+
+    @Exclude
+    public double getTotalPrice(){
+        double total = 0;
+        for(int i = 0 ; i < categoryItems.size(); i++){
+            total += categoryItems.get(i).getPrice();
+        }
+
+        return total;
     }
 }

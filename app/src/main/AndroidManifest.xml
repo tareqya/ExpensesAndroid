@@ -16,6 +16,9 @@
         android:theme="@style/Theme.ExpensesApp"
         tools:targetApi="31">
         <activity
+            android:name=".main.UpdateProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".main.CategoryActivity"
             android:exported="false" />
         <activity

@@ -1,13 +1,18 @@
 package com.example.expensesapp.entity;
 
+import com.google.firebase.database.Exclude;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class UserEntity extends FirebaseKey{
+import java.io.Serializable;
+
+public class UserEntity extends FirebaseKey implements Serializable {
     public static final String USERS_TABLE = "Users";
 
     private String firstName;
     private String lastName;
     private String email;
+    private String imagePath;
+    private String imageUrl;
 
     public UserEntity() {}
 
@@ -41,5 +46,29 @@ public class UserEntity extends FirebaseKey{
     public  com.google.android.gms.tasks.Task<Void> saveUser(FirebaseDatabase db){
 
         return db.getReference(USERS_TABLE).child(this.key).setValue(this);
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public UserEntity setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+        return this;
+    }
+
+    @Exclude
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public UserEntity setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+        return this;
+    }
+
+    @Exclude
+    public String getFullName(){
+        return this.firstName + " " + this.lastName;
     }
 }

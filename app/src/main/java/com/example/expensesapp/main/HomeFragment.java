@@ -1,32 +1,40 @@
 package com.example.expensesapp.main;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.expensesapp.R;
+import com.example.expensesapp.adapters.CategoryAdapter;
 import com.example.expensesapp.boundary.UserBoundary;
+import com.example.expensesapp.boundary.UserCategoryBoundary;
 import com.example.expensesapp.callback.CategoryCallBack;
+import com.example.expensesapp.callback.OnClickCategory;
 import com.example.expensesapp.callback.UserCallBack;
 import com.example.expensesapp.controller.AuthController;
 import com.example.expensesapp.controller.CategoryController;
 import com.example.expensesapp.controller.UserController;
 import com.example.expensesapp.entity.CategoryEntity;
 import com.example.expensesapp.entity.UserCategory;
+import com.example.expensesapp.entity.UserEntity;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
-
+    public static final String SELECTED_CATEGORY_KEY = "SELECTED_CATEGORY_KEY";
     private Activity activity;
     private TextView fHome_TV_name;
     private RecyclerView fHome_RV_categories;
@@ -90,6 +98,29 @@ public class HomeFragment extends Fragment {
                 user = userBoundary;
                 fHome_TV_name.setText("Hello " + user.getFirstName());
                 fHome_PB_loading.setVisibility(View.INVISIBLE);
+
+                CategoryAdapter categoryAdapter = new CategoryAdapter(activity, userBoundary.getUserCategories());
+                categoryAdapter.setOnClickCategory(new OnClickCategory() {
+                    @Override
+                    public void onClick(UserCategoryBoundary categoryBoundary, int position) {
+                        Intent intent = new Intent(activity, CategoryActivity.class);
+                        intent.putExtra(SELECTED_CATEGORY_KEY, categoryBoundary);
+                        startActivity(intent);
+
+                    }
+                });
+
+
+                fHome_RV_categories.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false));
+                fHome_RV_categories.setHasFixedSize(true);
+                fHome_RV_categories.setItemAnimator(new DefaultItemAnimator());
+                fHome_RV_categories.setAdapter(categoryAdapter);
+
+            }
+
+            @Override
+            public void onUserInfoFetchComplete(UserEntity user) {
+
             }
         });
         categoryController.fetchAllCategories();

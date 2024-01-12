@@ -2,7 +2,9 @@ package com.example.expensesapp.entity;
 
 import com.google.firebase.database.Exclude;
 
-public class FirebaseKey {
+import java.io.Serializable;
+
+public class FirebaseKey implements Serializable {
     protected String key;
 
 
