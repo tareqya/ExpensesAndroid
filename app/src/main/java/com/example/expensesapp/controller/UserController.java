@@ -1,5 +1,8 @@
 package com.example.expensesapp.controller;
 
+import android.app.Activity;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 
 import com.example.expensesapp.boundary.UserBoundary;
@@ -16,6 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UserController {
     private FirebaseDatabase db ;
@@ -36,6 +41,21 @@ public class UserController {
                 userCallBack.onUserSaveComplete(task);
             }
         });
+    }
+
+    public void updateUserData(Activity activity, UserEntity user){
+        Map<String, Object> userFields = new HashMap<>();
+        userFields.put("firstName", user.getFirstName());
+        userFields.put("lastName", user.getLastName());
+        userFields.put("imagePath", user.getImagePath());
+        this.db.getReference(UserEntity.USERS_TABLE).child(user.getKey()).updateChildren(userFields)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(activity, "Profile update successfully", Toast.LENGTH_SHORT).show();
+                        activity.finish();
+                    }
+                });
     }
 
     public void getUserInfo(String uid){
@@ -80,5 +100,12 @@ public class UserController {
 
             }
         });
+    }
+
+    public void updateCategoryMaxPrice(String uid, String categoryKey, double maxPrice){
+        Map<String, Object> maxPriceField = new HashMap<>();
+        maxPriceField.put("maxPrice", maxPrice);
+        this.db.getReference(UserEntity.USERS_TABLE).child(uid).child("userCategories")
+                .child(categoryKey).updateChildren(maxPriceField);
     }
 }

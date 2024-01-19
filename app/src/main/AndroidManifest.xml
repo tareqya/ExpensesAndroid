@@ -4,6 +4,13 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +22,12 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.ExpensesApp"
         tools:targetApi="31">
+        <activity
+            android:name=".main.CompareCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main.DashboardActivity"
+            android:exported="false" />
         <activity
             android:name=".main.UpdateProfileActivity"
             android:exported="false" />

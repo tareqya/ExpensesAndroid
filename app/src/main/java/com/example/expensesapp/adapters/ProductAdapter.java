@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.expensesapp.R;
 import com.example.expensesapp.entity.CategoryItem;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private Context context;
-    private ArrayList<CategoryItem> categoryItems;
+    private List<CategoryItem> categoryItems;
 
-    public ProductAdapter(Context context, ArrayList<CategoryItem> categoryItems){
+    public ProductAdapter(Context context, List<CategoryItem> categoryItems){
         this.context = context;
         this.categoryItems = categoryItems;
     }

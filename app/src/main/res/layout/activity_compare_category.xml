@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.CompareCategoryActivity">
+
+
+    <LinearLayout
+        android:id="@+id/compareCategory_LL_nameWrapper"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_margin="10dp"
+            android:id="@+id/compareCategory_IMG_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/icon"
+            />
+
+        <TextView
+            android:id="@+id/compareCategory_TV_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginStart="20dp"
+            android:text="Category Name"
+            />
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/compareCategory_ET_price"
+        android:layout_below="@+id/compareCategory_LL_nameWrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text=""
+        android:textColor="@color/DarkPrimary"
+        android:textSize="24sp"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_below="@+id/compareCategory_LL_nameWrapper"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="20dp"
+        android:id="@+id/compareCategory_FBTN_updatePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:backgroundTint="@color/DarkPrimary"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/baseline_save_24"
+        app:tint="@color/white"
+        tools:ignore="SpeakableTextPresentCheck" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/compareCategory_RV_productsMonth"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@+id/compareCategory_ET_price"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    
+</RelativeLayout>

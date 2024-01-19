@@ -24,7 +24,7 @@ import com.google.android.gms.tasks.Task;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileFragment extends Fragment {
-
+    public static final String CURRENT_USER_KEY = "CURRENT_USER";
     private CircleImageView profile_image;
     private TextView profile_TV_name;
     private TextView profile_TV_email;
@@ -35,6 +35,7 @@ public class ProfileFragment extends Fragment {
 
     private UserController userController;
     private AuthController authController ;
+    private UserEntity currentUser;
 
     public ProfileFragment(Activity activity) {
        this.activity = activity;
@@ -65,7 +66,7 @@ public class ProfileFragment extends Fragment {
 
             @Override
             public void onUserInfoFetchComplete(UserEntity user) {
-                // here
+                currentUser = user;
                 if(user.getImageUrl() != null){
                     Glide.with(activity)
                             .load(user.getImageUrl())
@@ -84,6 +85,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(activity, UpdateProfileActivity.class);
+                intent.putExtra(CURRENT_USER_KEY, currentUser);
                 startActivity(intent);
             }
         });
@@ -91,7 +93,8 @@ public class ProfileFragment extends Fragment {
         profile_CV_dashboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(activity, DashboardActivity.class);
+                startActivity(intent);
             }
         });
 
