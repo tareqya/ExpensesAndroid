@@ -99,7 +99,7 @@ public class HomeFragment extends Fragment {
                 fHome_TV_name.setText("Hello " + user.getFirstName());
                 fHome_PB_loading.setVisibility(View.INVISIBLE);
 
-                CategoryAdapter categoryAdapter = new CategoryAdapter(activity, userBoundary.getUserCategories());
+                CategoryAdapter categoryAdapter = new CategoryAdapter(activity, userBoundary.getUserCategoriesAsList());
                 categoryAdapter.setOnClickCategory(new OnClickCategory() {
                     @Override
                     public void onClick(UserCategoryBoundary categoryBoundary, int position) {

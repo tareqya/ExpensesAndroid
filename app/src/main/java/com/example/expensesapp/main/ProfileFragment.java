@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.expensesapp.R;
+import com.example.expensesapp.auth.LoginActivity;
 import com.example.expensesapp.boundary.UserBoundary;
 import com.example.expensesapp.callback.UserCallBack;
 import com.example.expensesapp.controller.AuthController;
@@ -101,7 +102,10 @@ public class ProfileFragment extends Fragment {
         profile_CV_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                authController.logout();
+                Intent intent = new Intent(activity, LoginActivity.class);
+                startActivity(intent);
+                activity.finish();
             }
         });
     }

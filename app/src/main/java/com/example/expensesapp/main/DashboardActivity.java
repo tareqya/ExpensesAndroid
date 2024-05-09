@@ -53,7 +53,7 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onUserDataFetchComplete(UserBoundary userBoundary) {
 
-                CategoryAdapter categoryAdapter = new CategoryAdapter(DashboardActivity.this, userBoundary.getUserCategories());
+                CategoryAdapter categoryAdapter = new CategoryAdapter(DashboardActivity.this, userBoundary.getUserCategoriesAsList());
                 categoryAdapter.setOnClickCategory(new OnClickCategory() {
                     @Override
                     public void onClick(UserCategoryBoundary categoryBoundary, int position) {

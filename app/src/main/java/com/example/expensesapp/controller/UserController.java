@@ -1,6 +1,7 @@
 package com.example.expensesapp.controller;
 
 import android.app.Activity;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UserController {
@@ -83,13 +85,13 @@ public class UserController {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserBoundary userBoundary = snapshot.getValue(UserBoundary.class);
-                userBoundary.getUserCategories().removeIf(item -> item == null);
 
                 for(int i = 0 ; i < categoryEntities.size(); i++) {
                     String key = categoryEntities.get(i).getKey();
-                    for(UserCategoryBoundary userCategory:userBoundary.getUserCategories()){
-                        if(key.equals(userCategory.getCategoryKey())){
-                            userCategory.setCategoryEntity(categoryEntities.get(i));
+                    for(Map.Entry<String, UserCategoryBoundary> userCategory:userBoundary.getUserCategories().entrySet()){
+
+                        if(key.equals(userCategory.getValue().getCategoryKey())){
+                            userCategory.getValue().setCategoryEntity(categoryEntities.get(i));
                         }
                     }
                 }

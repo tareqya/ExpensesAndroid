@@ -8,11 +8,11 @@ import java.io.Serializable;
 public class UserEntity extends FirebaseKey implements Serializable {
     public static final String USERS_TABLE = "Users";
 
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String imagePath;
-    private String imageUrl;
+    protected String firstName;
+    protected String lastName;
+    protected String email;
+    protected String imagePath;
+    protected String imageUrl;
 
     public UserEntity() {}
 
